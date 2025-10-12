@@ -54,7 +54,12 @@ nav a:hover {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   padding: 15px;
-  width: 250px;
+  width: 280px;
+  transition: transform 0.3s;
+}
+
+.item:hover {
+  transform: scale(1.03);
 }
 
 .item img {
