@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portifólio - Dataurb</title>
+  <link rel="icon" type="image/png" href="assets/images/icon.png">
+  <style>
+    body { 
+        font-family: Arial, sans-serif; 
+        margin:0; 
+        padding:0; 
+        background:#f8f8f8; /* Cor de fundo mais clara para destacar os cards */
+    }
+    header { 
+        background:#ffffff; 
+        color:#fff; 
+        text-align:center; 
+        padding:20px 10px; 
+        border-bottom: 1px solid #eee; /* Linha sutil para separar o header */
+    }
+
+    /* 1. Ajuste para AUMENTAR a logo */
+    header img { 
+        width: 180px; /* Aumentado de 180px para 220px */
+        margin-bottom:10px; 
+    }
+
+    h1 { 
+        margin:0; 
+        font-size:22px; 
+        color: #333; /* Cor para o título */
+    }
+
+    /* 2. Configuração para CENTRALIZAR e COLOCAR lado a lado */
+    main { 
+        display:flex; 
+        flex-wrap:wrap; 
+        justify-content:center; /* Centraliza horizontalmente */
+        gap: 30px; /* Espaçamento entre os cards */
+        padding: 30px; 
+    }
+
+    /* Estilos do Card (Eu renomeei a classe .item para .card) */
+    .card { 
+        border:1px solid #ddd; 
+        border-radius:12px; 
+        width: 300px; /* Largura fixa para os cards */
+        overflow:hidden; 
+        box-shadow:0 4px 8px rgba(0,0,0,0.1); /* Sombra mais destacada */
+        transition: transform 0.3s ease; 
+        background:#fff; 
+        text-align: center; /* Centraliza o conteúdo textual */
+        text-decoration: none; /* Remove sublinhado dos links */
+        color: inherit; /* Mantém a cor do texto do body */
+    }
+
+    /* Correção do hover: agora ele aumenta, não diminui */
+    .card:hover { 
+        transform: translateY(-5px); 
+        box-shadow:0 8px 16px rgba(0,0,0,0.2);
+    }
+    
+    .card a {
+        text-decoration: none; /* Remove sublinhado dos links internos */
+        color: #333;
+        display: block; /* Para que o link ocupe todo o espaço do card */
+        padding: 15px;
+    }
+
+    /* Ajuste de Imagem no Card para que ela apareça */
+    .card img { 
+        width: 100%; /* Ocupa 100% da largura do card */
+        height: 180px; /* Altura fixa para as imagens */
+        object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+        border-bottom: 1px solid #eee;
+    }
+
+    .card h2 { 
+        color:#1E3A6D; 
+        font-size:18px; 
+        margin: 10px 0 5px 0; 
+    }
+
+    .card p { 
+        font-size:14px; 
+        color:#555; 
+        margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+        <img src="assets/images/logo.png" alt="Dataurb">
+    <h1>Portifólio de Projetos</h1>
+  </header>
+
+  <main>
+    <div class="card">
+        <a href="saopedrodacipa.html">
+            <img src="img/sao-pedro-da-cipa.png" alt="Prefeitura Municipal de São Pedro da Cipa - MT">
+            <h2>Prefeitura Municipal de São Pedro da Cipa - MT</h2>
+            <p>Mapeamento Urbano e Gestão Territorial - Dataurb.</p>
+        </a>
+    </div>
+
+        <div class="card">
+        <a href="altoaraguaia.html">
+                      <img src="img/altoaraguaia.png" alt="Prefeitura Municipal de Alto Araguaia - MT">
+          <h2>Prefeitura Municipal de Alto Araguaia - MT</h2>
+          <p>Planta Genérica de Valores Urbana - Dataurb.</p>
+        </a>
+    </div>
+  </main>
+</body>
+</html>
