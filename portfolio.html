@@ -1,124 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Portfólio - Dataurb</title>
- <link rel="icon" type="image/png" href="assets/images/icon.png">
- <style>
-     body { 
-        font-family: Arial, sans-serif; 
-        margin:0; 
-        padding:0; 
-        background:#f8f8f8; 
-    }
-    header { 
-        background:#ffffff; 
-        color:#fff; 
-        text-align:center; 
-        padding:20px 10px; 
-        border-bottom: 1px solid #eee; 
-    }
-
-    /* 1. Ajuste para AUMENTAR a logo */
-    header img { 
-        width: 200px; /* A logo está maior */
-        margin-bottom:10px; 
-    }
-
-    h1 { 
-        margin:0; 
-        font-size:22px; 
-        color: #333; 
-    }
-
-    /* 2. Configuração para CENTRALIZAR e COLOCAR lado a lado */
-    main { 
-        display:flex; 
-        flex-wrap:wrap; 
-        justify-content:center; /* Centraliza horizontalmente */
-        gap: 30px; /* Espaçamento entre os cards */
-        padding: 30px; 
-    }
-
-    /* Estilos do Card */
-    .card { 
-        border:1px solid #ddd; 
-        border-radius:12px; 
-        width: 300px; 
-        overflow:hidden; 
-        box-shadow:0 4px 8px rgba(0,0,0,0.1); 
-        transition: transform 0.3s ease; 
-        background:#fff; 
-        text-align: center; 
-        text-decoration: none; 
-        color: inherit; 
-    }
-
-    .card:hover { 
-        transform: translateY(-5px); 
-        box-shadow:0 8px 16px rgba(0,0,0,0.2);
-    }
-    
-    .card a {
-        text-decoration: none; 
-        color: #333;
-        display: block; 
-        padding: 15px;
-    }
-
-    /* Ajuste de Imagem no Card para que ela apareça */
-    .card img { 
-        width: 100%; 
-        height: 180px; 
-        object-fit: cover; 
-        border-bottom: 1px solid #eee;
-        margin-bottom: 10px; /* Adiciona um espaço abaixo da imagem */
-    }
-
-    .card h2 { 
-        color:#1E3A6D; 
-        font-size:18px; 
-        margin: 10px 0 5px 0; 
-    }
-
-    .card p { 
-        font-size:14px; 
-        color:#555; 
-        margin: 0;
-    }
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Dataurb</title>
+    <link rel="icon" href="assets/icone.png" type="image/png">
+    <link rel="stylesheet" href="assets/estilo.css">
 </head>
 <body>
     <header>
-     <img src="assets/images/logo.png" alt="Dataurb">
-    <h1>Portfólio de Projetos</h1>
-</header>
-
-    <main>
-    <div class="card">
-        <a href="saopedrodacipa.html">
-            <img src="img/sao-pedro-da-cipa.png" alt="Prefeitura Municipal de São Pedro da Cipa - MT">
+        <img src="assets/logo.png" alt="Logo Dataurb" class="logo">
+        <h1>Portfólio de Projetos</h1>
+    </header>
+    <main class="portfolio">
+        <div class="project">
+            <img src="assets/sao_pedro.png" alt="São Pedro da Cipa">
             <h2>Prefeitura Municipal de São Pedro da Cipa - MT</h2>
-            <p>Mapeamento Urbano e Gestão Territorial - Dataurb.</p>
-        </a>
-    </div>
-
-     <div class="card">
-         <a href="altoaraguaia.html">
-            <img src="img/altoaraguaia.png" alt="Prefeitura Municipal de Alto Araguaia - MT">
+            <a href="login_saopedro.html" class="btn">Acessar Projeto</a>
+        </div>
+        <div class="project">
+            <img src="assets/alto_araguaia.png" alt="Alto Araguaia">
             <h2>Prefeitura Municipal de Alto Araguaia - MT</h2>
-        <p>Planta Genérica de Valores Urbana - Dataurb.</p>
-         </a>
-     </div>
-
-      <div class="card">
-         <a href="altotaquari.html">
-            <img src="img/altotaquari.png" alt="Prefeitura Municipal de Alto Taquari - MT">
-            <h2>Prefeitura Municipal de Alto Taquari - MT</h2>
-        <p>Planta Genérica de Valores Rural - Dataurb.</p>
-         </a>
-     </div>
+            <p>Planta Genérica de Valores Urbano</p>
+            <a href="login_altoaraguaia.html" class="btn">Acessar Projeto</a>
+        </div>
     </main>
 </body>
 </html>
