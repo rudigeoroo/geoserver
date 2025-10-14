@@ -1,8 +1,8 @@
 // Objeto que armazena os usuários e suas senhas.
 // A chave é o nome de usuário (em minúsculas) e o valor é a senha.
 const usuarios = {
-    "dataurb": "admin",
-    "rudi": "geo"
+    "dataurb": "geo",
+    "admin": "admin"
 };
 
 function login(destino) {
