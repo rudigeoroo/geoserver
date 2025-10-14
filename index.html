@@ -1,70 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dataurb - Portal</title>
-   <link rel="icon" type="image/png" href="assets/images/icon.png">
-   <style>
-     body { 
-        margin:0; 
-        font-family: Arial, sans-serif; 
-        background-color: #f4f4f4; /* Fundo levemente cinza */
-        text-align: center; 
-    }
-
-    main { 
-        padding: 60px 20px; /* Mais padding para centralizar visualmente */
-        max-width: 600px; /* Limita a largura do conteúdo principal */
-        margin: 0 auto; /* Centraliza o bloco main */
-    }
-
-    /* 1. Ajuste para AUMENTAR a logo */
-      img.logo { 
-        width: 280px; /* Aumentado de 200px para 280px */
-        margin: 20px auto 30px auto; 
-        display: block; 
-    }
-
-    /* 2. Ajuste para DIMINUIR o tamanho da fonte do H1 */
-     h1 { 
-        color:#1E3A6D; 
-        margin-bottom: 10px;
-        font-size: 24px; /* Tamanho da fonte diminuído (ex: de 28px padrão para 24px) */
-    }
-
-      p { 
-        color:#555; 
-        margin-bottom: 30px; 
-        font-size: 16px;
-    }
-
-      a.button { 
-        background:#1E3A6D; 
-        color:#fff; 
-        padding: 12px 25px; 
-        border-radius: 8px; 
-        text-decoration: none; 
-        font-weight: bold; 
-        display: inline-block; /* Garante que o padding funcione corretamente */
-        transition: background 0.3s;
-    }
-
-      a.button:hover { 
-        background:#2E4A8A; 
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataurb - Portal</title>
+    <link rel="icon" type="image/png" href="assets/images/icon.png">
     
-    /* Regra original (splash) mantida, caso você adicione uma imagem de cabeçalho */
-    /* header img.splash { width:100%; max-height:250px; object-fit:cover; } */
-    
-   </style>
+    <style>
+        /* Estilos globais e de layout */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f2f5; 
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container principal */
+        main {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 16px; 
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); 
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilo da logo */
+        img.logo {
+            width: 250px;
+            max-width: 100%;
+            margin-bottom: 25px;
+        }
+
+        /* Título */
+        h1 {
+            color: #1E3A6D;
+            font-size: 28px; 
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        /* Parágrafo de descrição */
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        /* Botão principal */
+        a.button {
+            background: #1E3A6D;
+            color: #ffffff;
+            padding: 14px 30px; 
+            border-radius: 50px; 
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 25px;
+        }
+
+        a.button:hover {
+            background: #2E4A8A;
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos para os links de contato */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .contact-link {
+            color: #1E3A6D;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: #2E4A8A;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-   <main>
-      <img src="assets/images/logo.png" alt="Dataurb" class="logo">
-      <h1>Bem-vindo ao portal Dataurb</h1>
-      <p>Site em desenvolvimento.</p>
-      <a href="portfolio.html" class="button">Acessar Portfólio</a>
-   </main>
+    <main>
+        <img src="assets/images/logo.png" alt="Dataurb" class="logo">
+        <h1>Bem-vindo ao portal Dataurb</h1>
+        <p>Acesse nosso portfólio para explorar os projetos inovadores em mapeamento urbano e gestão territorial.</p>
+        <a href="portfolio.html" class="button">Acessar Portfólio</a>
+
+        <div class="contact-links">
+            <a href="mailto:contato@dataurb.com.br" class="contact-link">E-mail</a>
+            <a href="https://instagram.com/dataurb" target="_blank" class="contact-link">Instagram</a>
+            <a href="https://wa.me/5565996443100" target="_blank" class="contact-link">WhatsApp</a>
+        </div>
+    </main>
 </body>
 </html>
