@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colonia Couto Magalhães - Dataurb</title>
+    <title>Alto Araguaia - Dataurb</title>
     <link rel="icon" type="image/png" href="assets/images/icon.png">
     
     <style>
@@ -87,7 +87,7 @@
 <body>
     <div class="login-container" id="login-form">
         <img src="assets/images/logo.png" alt="Dataurb" class="logo-login">
-        <h2>Prefeitura Municipal de Ribeirãozinho</h2>
+        <h2>Prefeitura Municipal de Alto Araguaia</h2>
         <input type="text" id="usuario" placeholder="Usuário">
         <input type="password" id="senha" placeholder="Senha">
         <button onclick="realizarLogin()">Entrar</button>
@@ -126,7 +126,7 @@
                 document.getElementById("mapa-container").style.display = "block";
                 
                 // 3. AGORA SIM carregamos o mapa. Isso força ele a renderizar no tamanho certo.
-                document.getElementById("iframe-mapa").src = "https://app.atlas.co/embeds/0ScYN2l0ZDLRYDcp6sOj?loc=-52.8381%2C-16.5609%2C14.9529z&public=true";
+                document.getElementById("iframe-mapa").src = "https://app.atlas.co/embeds/0ScYN2l0ZDLRYDcp6sOj";
 
             } else {
                 elementoErro.textContent = "Usuário ou senha incorretos";
