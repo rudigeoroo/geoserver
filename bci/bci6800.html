@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador 360º - BCI 6800</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* O container da imagem 360 ocupa tudo */
+        #panorama {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        /* Barra flutuante superior (HUD) */
+        .hud-header {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+            border-radius: 50px; /* Bordas arredondadas estilo pílula */
+            z-index: 10; /* Fica acima da imagem 360 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-sizing: border-box; /* Garante que o padding não estoure a largura */
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo-box img {
+            height: 55px; /* Altura das logos */
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Título central (opcional, some no celular para economizar espaço) */
+        .info-center {
+            text-align: center;
+            color: #1a2b42;
+        }
+        .info-center h1 {
+            margin: 0;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .info-center span {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Botão Fechar (apenas visual, pois fecha a aba) */
+        .close-btn {
+            display: none; /* A maioria dos navegadores bloqueia window.close() vindo de link */
+        }
+
+        /* Responsividade para celular */
+        @media (max-width: 768px) {
+            .hud-header {
+                top: 10px;
+                height: 60px;
+                padding: 0 15px;
+                border-radius: 12px; /* Menos arredondado no celular */
+                width: 95%;
+            }
+            .logo-box img {
+                height: 40px;
+            }
+            .info-center {
+                display: none; /* Esconde o texto no celular para caber as logos */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hud-header">
+        <div class="logo-box">
+            <img src="assets/images/brasao1.jpg" alt="Prefeitura Ribeirãozinho">
+        </div>
+
+        <div class="info-center">
+            <h1>Imóvel 6800</h1>
+            <span>Distrito de Couto Magalhães</span>
+        </div>
+
+        <div class="logo-box">
+            <img src="assets/images/splash_screen.png" alt="Dataurb">
+        </div>
+    </div>
+
+    <div id="panorama"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+    <script>
+        pannellum.viewer('panorama', {
+            "type": "equirectangular",
+            "panorama": "img_6800.jpg",
+            "autoLoad": true,
+            "compass": false, /* Compass desligado para limpar a tela */
+            
+            /* Controles */
+            "showZoomCtrl": true,
+            "mouseZoom": true,
+            "keyboardZoom": true,
+            
+            /* Ajustes de Câmera */
+            "hfov": 110,
+            "minHfov": 30,
+            "maxHfov": 120,
+            "pitch": -5,
+        });
+    </script>
+
+</body>
+</html>
