@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCI - Boletim de Cadastro de Imóvel | 6800</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.css"/>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #1a2b42;
+            --accent-color: #3d5afe;
+            --bg-color: #f0f2f5;
+            --text-color: #333;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        /* --- CABEÇALHO ATUALIZADO --- */
+        .header {
+            background: #ffffff;
+            border-bottom: 4px solid var(--primary-color);
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Espalha os itens (Esq - Centro - Dir) */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-logo-left img {
+            height: 70px; /* Altura do Brasão */
+            width: auto;
+        }
+
+        .header-center {
+            text-align: center;
+            flex-grow: 1; /* Ocupa o espaço central */
+            padding: 0 20px;
+        }
+
+        .header-center h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .header-center p {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .header-logo-right img {
+            height: 55px; /* Altura da Dataurb (ajustada para equilibrar) */
+            width: auto;
+        }
+
+        /* --- LAYOUT 1/3 e 2/3 --- */
+        .container {
+            max-width: 1600px; /* Aumentei um pouco para aproveitar telas largas */
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            /* AQUI ESTÁ A MUDANÇA DE PROPORÇÃO */
+            grid-template-columns: 1fr 2fr; 
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Garante que ambos tenham a mesma altura visual */
+        }
+
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-body {
+            padding: 0;
+            flex-grow: 1;
+            position: relative; /* Necessário para o viewer preencher */
+        }
+
+        /* Ajustes na tabela para caber na coluna mais estreita */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem; /* Fonte levemente menor */
+        }
+
+        .data-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table td:first-child {
+            font-weight: 600;
+            color: #444;
+            width: 40%; /* Ajuste de largura da coluna de rótulos */
+            background-color: #f8f9fa;
+            border-right: 1px solid var(--border-color);
+        }
+
+        /* Viewer 360 */
+        #panorama {
+            width: 100%;
+            height: 100%;
+            min-height: 600px; /* Aumentei a altura mínima já que agora é destaque */
+            background-color: #eee;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.15);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr; /* Volta a empilhar em tablets/celulares */
+            }
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+            .header-center {
+                order: -1; /* Título primeiro no mobile */
+                margin-bottom: 10px;
+            }
+            .header-logo-left, .header-logo-right {
+                display: block; /* Garante que apareçam */
+            }
+            #panorama {
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-logo-left">
+            <img src="assets/images/brasao1.jpeg" alt="Brasão Ribeirãozinho">
+        </div>
+
+        <div class="header-center">
+            <h1>Boletim de Cadastro de Imóvel</h1>
+            <p>Prefeitura Municipal de Ribeirãozinho - MT</p>
+        </div>
+
+        <div class="header-logo-right">
+            <img src="assets/images/splash_screen.png" alt="Dataurb Gestão">
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="card-header">
+                <span>Dados Técnicos</span>
+                <span class="badge">Mat.: 21558</span>
+            </div>
+            <div class="card-body">
+                <table class="data-table">
+                    <tr><td>CÓDIGO BIT</td><td>6800</td></tr>
+                    <tr><td>SETOR/QUADRA/LOTE</td><td>149 / 007 / 0028</td></tr>
+                    <tr><td>LOGRADOURO</td><td>AV. EPAMINONDAS SILVA RIBEIRO</td></tr>
+                    <tr><td>BAIRRO</td><td>DISTRITO DE COUTO MAGALHÃES</td></tr>
+                    <tr><td>ZONA FISCAL</td><td>10</td></tr>
+                    <tr><td>ÁREA TERRENO</td><td>7.687,83 m²</td></tr>
+                    <tr><td>TESTADA</td><td>DUAS FRENTES (ESQUINA)</td></tr>
+                    <tr><td>TOPOGRAFIA</td><td>PLANO</td></tr>
+                    <tr><td>PEDOLOGIA</td><td>ARGILOSO</td></tr>
+                    <tr><td>SITUAÇÃO</td><td>CONSTRUÍDO</td></tr>
+                    <tr><td>USO</td><td>COMERCIAL</td></tr>
+                    <tr><td>ESTRUTURA</td><td>METÁLICA</td></tr>
+                    <tr><td>COBERTURA</td><td>FIBROCIMENTO</td></tr>
+                    <tr><td>CONSERVAÇÃO</td><td>REGULAR</td></tr>
+                    <tr><td>PAVIMENTAÇÃO</td><td>ASFALTO</td></tr>
+                    <tr><td>INFRAESTRUTURA</td><td>ÁGUA, ENERGIA, LIXO</td></tr>
+                    <tr><td>OBSERVAÇÕES</td><td>-</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span>Imagem 360°</span>
+                <span class="badge">Use o mouse para navegar e zoom</span>
+            </div>
+            <div class="card-body">
+                <div id="panorama"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Sistema Desenvolvido por <strong>Dataurb Gestão de Cidades</strong> &copy; 2026
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/pannellum/build/pannellum.js"></script>
+
+    <script>
+        pannellum.viewer('panorama', {
+            "type": "equirectangular",
+            "panorama": "img_6800.jpg",
+            "autoLoad": true,
+            "compass": true,
+            
+            /* Controles de Zoom Ativados */
+            "showZoomCtrl": true,
+            "mouseZoom": true,
+            "keyboardZoom": true,
+            "maxHfov": 120,
+            "minHfov": 30,
+            
+            "hfov": 100, /* Campo de visão inicial ajustado */
+            "pitch": -5,
+        });
+    </script>
+
+</body>
+</html>
